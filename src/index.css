@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.light-mode {
+  filter: invert(1) hue-rotate(180deg) brightness(1.05) contrast(0.95);
+}
+
+.light-mode img,
+.light-mode svg,
+.light-mode .recharts-wrapper,
+.light-mode .no-invert {
+  filter: invert(1) hue-rotate(-180deg) !important;
+}
+
+/* Ensure glassmorphism overlays don't wash out */
+.light-mode .backdrop-blur-md,
+.light-mode .backdrop-blur-xl,
+.light-mode .backdrop-blur-sm {
+  backdrop-filter: blur(8px) contrast(1.2);
+}
